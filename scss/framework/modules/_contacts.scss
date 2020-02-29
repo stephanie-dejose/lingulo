@@ -1,0 +1,91 @@
+@import '../variables';
+
+/* ---------------------------------------------------
+   PAGE CONTACT
+   ---------------------------------------------------*/
+ .container {
+   max-width: 700px;
+   width: 100%;
+   margin: 0 auto;
+   position: relative;
+ }
+
+ #contact {
+   background: $couleurClaire1;
+   padding: 25px;
+   margin: 150px 0;
+   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+   text-align: $texteAlignementCentre;
+   h1 {
+     display: block;
+     font-size: $texteTailleGrand;
+     font-weight: 300;
+     margin-bottom: 10px;
+     font-family: $texteFont2;
+     color: $couleur1Foncee;
+   }
+   h2 {
+     margin: 5px 0 15px;
+     display: block;
+     font-size: $texteTaillePetit;
+     font-weight: 400;
+   }
+ }
+
+ fieldset {
+   border: medium none !important;
+   margin: 0 0 10px;
+   width: 100%;
+   padding: 0;
+ }
+
+ #contact input[type="text"],
+ #contact input[type="email"],
+ #contact input[type="tel"],
+ #contact input[type="url"],
+ #contact textarea {
+   width: 100%;
+   border: 1px solid $couleurClaire4;
+   background: $couleurClaire2;
+   margin: 0 0 5px;
+   padding: 10px;
+   font-size: $texteTailleMini;
+   border-radius: 8px;
+   &:hover, &:active, &:focus {
+     transition: border-color 0.3s ease-in-out;
+     border: 1px solid $couleur1Foncee;
+   }
+ }
+
+ #contact textarea {
+   height: 100px;
+   resize: none;
+ }
+
+ #contact button[type="submit"] {
+   cursor: pointer;
+   width: 100%;
+   border: none;
+   background: $boutonCouleurNormal;
+   color: $boutonCouleurTexteNormal;
+   margin: 0 0 5px;
+   padding: 10px;
+   font-size: $texteTaillePetit;
+   border-radius: 8px;
+   &:hover, &:active {
+     background: $boutonCouleurActif;
+     color: $boutonCouleurTexteActif;
+     transition: background-color 0.3s ease-in-out;
+     box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
+   }
+ }
+
+ .copyright {
+   text-align: $texteAlignementCentre;
+ }
+
+ #contact input:focus,
+ #contact textarea:focus {
+   outline: 0;
+   border: 1px solid $couleurClaire4;
+ }

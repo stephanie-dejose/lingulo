@@ -1,0 +1,141 @@
+// ./scss/framework/modules/_sliders.scss
+// MODULES DES SLIDERS
+
+/*---------------------------------------------------
+  SECTION -> SLIDER
+---------------------------------------------------*/
+.slider-wrap {
+  font-size: 0;
+  img {
+    width: 100%;
+  }
+}
+
+#slide-1, #slide-2 {
+  position: absolute;
+}
+
+#texteSlider1, #texteSlider2, #texteSlider3 {
+   position: absolute;
+   z-index: 1;
+   opacity: 0;
+   font-size: $texteTailleMini;
+   padding-top: 25px;
+   right: 15%;
+   left: 15%;
+   h1 {
+     display: inline-block;
+     font-size: $texteTailleMoyen;
+     background: $couleurFoncee2;
+     color: $couleurClaire1;
+     border-radius: 15px 0 15px 0;
+     padding: 10px 15px;
+   }
+   p {
+     margin-left: 50px;
+     background: $couleurClaire2;
+     padding: 10px 15px;
+     border-radius: 5px;
+     margin: 10px 0;
+   }
+   @media (min-width: map-get($grilleBreakPoints,'l')) {
+     p {
+       width: 60%;
+     }
+     .boutonOrange {
+       text-align: $texteAlignementCentre;
+       width: 120px;
+       background: linear-gradient(to bottom, $couleur1Claire 0%, $couleur1Foncee 100%);
+       color: $couleurClaire1;
+       border-radius: 5px;
+       padding: 10px 15px;
+       box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, .2);
+       transition: all .30s ease;
+       &:hover {
+         background: $couleurClaire1;
+         color: $couleurFoncee2;
+         transition: all .5s ease;
+       }
+     }
+   }
+   @media screen and (min-width: map-get($grilleBreakPoints,'xl')) {
+     p {
+       width: 40%;
+     }
+   }
+ }
+
+ /*---------------------------------------------------
+   ANIMATION -> SLIDER
+ ---------------------------------------------------*/
+
+
+  @keyframes slide1 {
+    0%   { opacity: 0; }
+    1%   { opacity: 1; }
+    33%  { opacity: 0; }
+    66%  { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes slide2 {
+    0%   { opacity: 0; }
+    33%  { opacity: 1; }
+    66%  { opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  @keyframes slide3 {
+    0%   { opacity: 0; }
+    33%  { opacity: 0; }
+    66%  { opacity: 1; }
+    100% { opacity: 0; }
+  }
+
+  #slider1 {
+    animation: slide1 20s infinite ease;
+  }
+  #slider2 {
+    animation: slide2 20s infinite ease;
+  }
+  #slider3 {
+    animation: slide3 20s infinite ease;
+  }
+
+  @keyframes texte1 {
+    0%   { opacity: 0; }
+    1%   { opacity: 1; }
+    16%  { opacity: 0; }
+    79%  { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+  @keyframes texte2 {
+    0%   { opacity: 0; }
+    17%  { opacity: 0; }
+    32%  { opacity: 1; }
+    47%  { opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  @keyframes texte3 {
+    0%   { opacity: 0; }
+    48%  { opacity: 0; }
+    63%  { opacity: 1; }
+    78%  { opacity: 0; }
+    100% { opacity: 0; }
+  }
+
+  #texteSlider1 {
+    animation: texte1 20s infinite ease;
+    z-index: 2;
+  }
+
+  #texteSlider2 {
+    animation: texte2 20s infinite ease;
+    z-index: 3;
+  }
+
+  #texteSlider3 {
+    animation: texte3 20s infinite ease;
+  }

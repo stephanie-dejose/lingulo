@@ -1,0 +1,535 @@
+// ./scss/app.scss
+//    FICHIER DE SURCHARGE
+
+@import 'framework/variables';
+
+/* ---------------------------------------------------
+   SPECIFICATIONS GENERALES - Valeurs par défaut
+   ---------------------------------------------------
+*/
+
+  body {
+    border-top: 5px solid $couleur1Foncee;
+    background: $couleurClaire2;
+    font-family: $texteFont1;
+    color: $couleurFoncee2;
+  }
+
+/*---------------------------------------------------
+  HEADER
+---------------------------------------------------*/
+
+header {
+  text-align: $texteAlignementCentre;
+  h1 {
+    padding-top: 75px;
+    font-family: $texteFont2;
+    font-size: $texteTailleGrand;
+    font-weight: $texteEpaisseurFin;
+    color: $couleur1Foncee;
+  }
+  h2 {
+    padding: 5px 0 75px 50px;
+    font-size: $texteTailleMini;
+    font-weight: $texteEpaisseurFin;
+    color: $couleurFoncee2;
+  }
+  @media screen and (min-width: map-get($grilleBreakPoints,'s')) {
+    text-align: $texteAlignementGauche;
+    h1 {
+      padding-top: 30px;
+      font-size: $texteTailleTresGrand;
+    }
+    h2 {
+      padding: 3px 0 20px 145px;
+    }
+  }
+}
+
+/*---------------------------------------------------
+  SECTION -> RECHERCHES
+---------------------------------------------------*/
+
+  #espaceRecherches {
+    height: auto;
+    padding: 10px 0;
+    align-items: center;
+    font-size: $texteTailleMini;
+    text-align: $texteAlignementCentre;
+    color: $couleurClaire1;
+    background-color: $couleur1Foncee;
+
+    p {
+      margin-top: 0;
+    }
+    #formulaireRecherches {
+      #inputText {
+        width: 250px;
+        max-width: 100%;
+        padding: 7px 5px;
+        margin-bottom: 5px;
+        background: $couleurClaire2;
+        border: 0;
+        border-radius: 5px;
+      }
+      #inputSubmit {
+        padding: 7px 10px;
+        font-weight: $texteEpaisseurGras;
+        color: $couleurClaire1;
+        background: $couleurFoncee2;
+        border: 0;
+        border-radius: 5px;
+        transition: all .25s ease;
+        &:hover {
+          color: $couleurFoncee2;
+          background: $couleurClaire1;
+        }
+      }
+    }
+    @media screen and (min-width: map-get($grilleBreakPoints,'m')) {
+      height: 75px;
+      p {
+        margin-bottom: 0;
+        padding-right: 20px;
+        text-align: $texteAlignementDroit;
+      }
+      #formulaireRecherches {
+        text-align: $texteAlignementGauche;
+        #inputText {
+          width: 225px;
+          margin-bottom: 0;
+        }
+      }
+    }
+    @media screen and (min-width: map-get($grilleBreakPoints,'l')) {
+      font-size: $texteTaillePetit;
+      p {
+        padding-right: 90px;
+      }
+      #formulaireRecherches {
+        font-size: $texteTailleMoyen;
+        #inputText {
+          width: 250px;
+          padding: 12px;
+        }
+        #inputSubmit {
+          padding: 12px;
+        }
+      }
+    }
+  }
+
+/*---------------------------------------------------
+  SECTION -> ICONES INFOS
+---------------------------------------------------*/
+
+#iconesInfo {
+  margin: 50px 0 50px 10%;
+  article {
+    width: 100%;
+    margin-top: 30px;
+    font-size: $texteTailleMini;
+    h1 {
+      display: inline-block;
+      margin-top: 0;
+      margin-left: 80px;
+      font-size: $texteTaillePetit;
+      font-weight: $texteEpaisseurFin;
+    }
+    p {
+      display: inline-block;
+      margin: 10px 0 0 80px;
+      line-height: 1.7rem;
+    }
+  }
+  .icon {
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    margin-top: 15px;
+    background-repeat: no-repeat;
+  }
+  .iconeCadenas {
+    background-image: url("../media/iconeCadenas.png");
+  }
+  .iconeIphone {
+    background-image: url("../media/iconeIphone.png");
+  }
+  .iconeEngrenage {
+    background-image: url("../media/iconeEngrenage.png");
+  }
+  @media screen and (min-width: map-get($grilleBreakPoints,'s')) {
+    margin-left: 25%;
+  }
+
+  @media screen and (min-width: map-get($grilleBreakPoints,'l')){
+    margin-left: 0;
+    article {
+      display: inline;
+      width: 370px;
+      padding-right: 100px;
+      h1, p {
+        margin: 0;
+      }
+      h1 {
+        margin-bottom: 10px;
+      }
+    }
+    .icon {
+      position: relative;
+    }
+  }
+}
+
+/*---------------------------------------------------
+  SECTION -> PORTFOLIO
+---------------------------------------------------*/
+
+#portfolio {
+  margin-left: auto;
+  margin-right: auto;
+  > h1 {
+    width: 90%;
+    margin: 20px 0 10px 20px;
+    padding: 10px 0;
+    font-size: $texteTaillePetit;
+    font-weight: $texteEpaisseurFin;
+    border-bottom: 1px solid $couleurClaire3;
+  }
+  article {
+    width: 200px;
+    max-width: 100%;
+    justify-self: center;
+    margin-bottom: 30px;
+    font-size: $texteTailleMini;
+    figure {
+      position: relative;
+      display: block;
+      font-size: 0;
+      a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: url("../media/iconeLoupe.png") center no-repeat;
+        background-color: rgba(0,0,0,0.5);
+        background-size: 18%;
+        opacity: 0;
+        transition: opacity .3s ease;
+        z-index: 2;
+      }
+      img {
+      width: 100%;
+      z-index: 1;
+      }
+      a:hover {
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+    h1 {
+      margin-bottom: 10px;
+      padding: 15px 0;
+      border-bottom: 1px solid $couleurClaire3;
+    }
+    p {
+      margin: 0;
+    }
+  }
+  @media screen and (min-width: map-get($grilleBreakPoints,'s')){
+    width: 450px;
+    h1 {
+      margin: 15px 0;
+      width: 100%;
+    }
+  }
+  @media screen and (min-width: map-get($grilleBreakPoints,'l')){
+    width: 900px;
+  }
+}
+
+/*---------------------------------------------------
+  SECTION -> PARAGRAPHE / FUSEE / HOROLOGE
+---------------------------------------------------*/
+
+.sectionSecondaire {
+  width: 90%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: $texteTailleMini;
+  h1 {
+    margin: 20px 0 10px;
+    padding: 10px 0;
+    font-size: $texteTaillePetit;
+    font-weight: $texteEpaisseurFin;
+    border-bottom: 1px solid $couleurClaire3;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+    br {
+      line-height: 2;
+    }
+  }
+  @media screen and (min-width: map-get($grilleBreakPoints,'s')){
+    margin-left: 30px;
+    margin-right: auto;
+  }
+  @media screen and (min-width: map-get($grilleBreakPoints,'l')){
+    margin-left: 0;
+    padding-left: 0;
+  }
+}
+
+.iconMain {
+  width: 90%;
+  max-width: 400px;
+  padding-left: 30px;
+  padding-top: 40px;
+  font-size: 14px;
+  p {
+    margin: 0;
+    padding: 15px 10px 50px 40px;
+    text-align: $texteAlignementJustifie;
+  }
+  .iconFused {
+    width: 80px;
+    height: 80px;
+    background:  url("../media/iconeFusee.png")no-repeat;
+    &:hover {
+      height: 100px;
+      transition: opacity 0.8s ease 0.2s;
+      animation: fused-take-off .9s forwards linear 1;
+    }
+  }
+  .iconClock {
+    width: 80px;
+    height: 80px;
+    margin-top: 15px;
+    background:  url("../media/iconeHorloge.png") no-repeat;
+    &:hover {
+      animation: alarm-ring 100ms forwards linear infinite;
+    }
+  }
+  @media screen and (min-width: map-get($grilleBreakPoints,'s')){
+    padding-left: 100px;
+    p {
+      padding-left: 30px;
+    }
+  }
+  @media screen and (min-width: map-get($grilleBreakPoints,'l')){
+    margin-top: 60px;
+    padding-left: 100px;
+  }
+}
+@keyframes fused-take-off {
+  0%   { transform: translateX(30px)
+                    translateY(46px)
+                    rotate(0deg)
+                    translate(-50%, -50%);
+         animation-timing-function: cubic-bezier(.25,.25,.75,.75); }
+
+  100% { transform: translateX(260px)
+                    translateY(-150px)
+                    rotate(0deg)
+                    translate(-50%, -50%); }
+}
+
+@keyframes alarm-ring {
+  0%   {  transform: translateX(40px)
+                     translateY(40px)
+                     rotate(0deg)
+                     translate(-50%, -50%);
+          animation-timing-function: cubic-bezier(.25,.25,.75,.75);}
+
+  100% { transform: translateX(50px)
+                    translateY(40px)
+                    rotate(0deg)
+                    translate(-50%, -50%);}
+}
+
+/*---------------------------------------------------
+  SECTION FOOTER -> RESUME
+---------------------------------------------------*/
+
+footer {
+  width: auto;
+  color: $couleurClaire4;
+  background-color: $couleurFoncee2;
+  #footerResume {
+     max-width: 900px;
+     margin: 20px auto;
+     padding-top: 30px;
+     font-size: 14px;
+     line-height: 2;
+  }
+  .resumeGeneral {
+    width: 300px;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    h1 {
+      margin-bottom: 10px;
+      padding: 0 0 10px 0;
+      font-size: 16px;
+      color: $couleurClaire1;
+      border-bottom: 1px solid $couleurFoncee1;
+    }
+  }
+  #resume1 {
+    @media screen and (min-width: map-get($grilleBreakPoints,'m')){
+      max-width: 275px;
+      width: 100%;
+    }
+  }
+  #resume2 {
+    ul {
+      padding: 0;
+      li {
+        display: block;
+        width: auto;
+        margin-bottom: 10px;
+        padding: 0 0 10px 25px;
+        background: url("../media/iconeFlecheDroite.png") left 6px no-repeat;
+        border-bottom: 1px solid $couleurFoncee1;
+        a {
+          color: $couleurClaire4;
+          &:hover {
+            color: $couleur1Foncee;
+          }
+        }
+      }
+    }
+    @media screen and (min-width: map-get($grilleBreakPoints,'m')){
+      max-width: 250px;
+      width: 100%;
+      padding-right: 5px;
+    }
+  }
+  #resume3 {
+    margin: 15px auto 0;
+    ul {
+      padding-left: 0;
+      li {
+        display: block;
+        a {
+          figure {
+            img {
+              width: 80px;
+              float: left;
+              border: 3px solid $couleurFoncee1;
+              transition: border .3s ease;
+              &:hover {
+                border-color: $couleurClaire3;
+              }
+            }
+          }
+        }
+        p {
+          display: block;
+          margin-top: 0;
+          margin-left: 95px;
+          font-size: 14px;
+          color: $couleurClaire4;
+        }
+      }
+    }
+    @media screen and (min-width: map-get($grilleBreakPoints,'m')){
+      margin: 0 auto;
+    }
+  }
+}
+
+/*---------------------------------------------------
+    SECTION FOOTER 2 (copyright + reseauxSociaux)
+---------------------------------------------------*/
+
+#sectionFooter2 {
+  width: 100%;
+  height: auto;
+  background: $couleurFoncee3;
+  #copyright p {
+    padding-top: 2%;
+    font-size: 14px;
+    text-align: $texteAlignementCentre;
+    color: $couleurFoncee1;
+    a {
+      color: $couleurClaire4;
+      &:hover {
+        color: $couleur1Foncee;
+      }
+    }
+  }
+  .reseauxSociaux {
+    .iconesFooter {
+      display: block;
+      width: 32px;
+      height: 32px;
+      float: left;
+      margin-top: 5.3%;
+      margin-right: 10px;
+      padding-top: 2%;
+      background: url("../media/sprite_socialMedia.png") no-repeat;
+      opacity: 0.3;
+      &:hover{
+        opacity:0.8;
+      }
+    }
+    .iconeGooglePlus {
+      background-position: -32px;
+    }
+    .iconeTwitter {
+      background-position:-64px;
+    }
+    .iconeXing {
+      background-position: -96px;
+    }
+    .iconeYoutube {
+      background-position: -128px;
+    }
+  }
+  @media  screen and (min-width: map-get($grilleBreakPoints, "l")){
+    #copyright p {
+      margin-left: 3%;
+    }
+  }
+}
+
+/*---------------------------------------------------
+    TRAITEMENT CONTACT
+---------------------------------------------------*/
+
+.traitementContact {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  #traitement {
+    background: $couleurClaire1;
+    padding: 25px;
+    margin: 150px 0;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    text-align: $texteAlignementCentre;
+
+    h1 {
+      display: block;
+      font-size: $texteTailleGrand;
+      font-weight: 300;
+      margin-bottom: 10px;
+      font-family: $texteFont2;
+      color: $couleur1Foncee;
+    }
+    p {
+      padding-top: 20px;
+      font-family: $texteFont1;
+      margin: 5px 0 15px;
+      display: block;
+      font-size: $texteTaillePetit;
+      font-weight: 400;
+    }
+  }
+}

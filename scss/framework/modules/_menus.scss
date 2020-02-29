@@ -1,0 +1,34 @@
+// ./scss/framework/modules/_menus.scss
+// MODULE DES MENUS
+@import '../variables';
+
+
+// --------------- Menu type horizontal ---------------
+  .menu_type__horizontal {
+    nav {
+      ul {
+        padding: 0 0 20px;
+        text-align: $texteAlignementCentre;
+        li {
+           list-style: none;
+           display: inline;
+           &:not(:last-child) {
+             padding: 0 .7rem;
+           }
+           &:last-child {
+             padding-left: .7rem;
+           }
+           a {
+             font-family: 'Open Sans', sans-serif;
+             color: $menuCouleurTexteNormal;
+             text-decoration: none;
+             text-transform: uppercase;
+             transition: all .25s ease;
+             &:hover {
+               color: $menuCouleurTexteActif;
+             }
+           }
+         }
+       }
+     }
+   }

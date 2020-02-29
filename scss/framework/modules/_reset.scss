@@ -1,0 +1,24 @@
+// ./scss/framework/modules/_reset.scss
+// MODULE RESET
+@import '../variables';
+
+
+* {
+  box-sizing: border-box;
+}
+
+body, figure, h1, h2, ul {
+  margin: 0;
+}
+
+figcaption, time {
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}

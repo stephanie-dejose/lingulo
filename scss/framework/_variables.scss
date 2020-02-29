@@ -1,0 +1,147 @@
+// ./scss/framework/_variables.scss
+// PARAMETRES DU FRAMEWORK
+
+/*
+    1. LES COULEURS
+    2. LES BOITES
+    3. LES TEXTES
+    4. LES MENUS
+    5. LES GRILLES
+    6. LES MENUS HAMBURGER
+    7. LES CONTACTS
+*/
+
+/* -----------------------------------------
+     1. LES COULEURS
+   ----------------------------------------- */
+    // COULEURS PRIMAIRES
+      $couleur1Claire: #FF8C66;
+      $couleur1Foncee: #E56038;
+
+    // COULEURS NEUTRES
+      // CLAIRES
+      $couleurClaire1: #FFF;
+      $couleurClaire2: #EBE8DE;
+      $couleurClaire3: #D6D0C1;
+      $couleurClaire4: #B7B7B7;
+
+      // FONCEES
+      $couleurFoncee1: #5E5E5E;
+      $couleurFoncee2: #333;
+      $couleurFoncee3: #1D1D1D;
+
+/* -----------------------------------------
+     2. LES BOITES
+   ----------------------------------------- */
+    $boiteDimensionFixe:  900px;
+    $boiteBordsDimension: 2px;
+    $boiteBordsCouleur:   $couleurFoncee1;
+    $boitePadding:        2rem;
+
+/* -----------------------------------------
+     3. LES TEXTES
+   ----------------------------------------- */
+     // POLICES
+     $texteFont1: 'Open Sans', sans-serif;
+     $texteFont2: 'Baumans', cursive;
+
+     // TAILLES
+     $texteTailleTresGrand:  55px;
+     $texteTailleGrand:      40px;
+     $texteTailleMoyen:      25px;
+     $texteTaillePetit:      18px;
+     $texteTailleMini:       15px;
+
+     // EPAISSEUR
+     $texteEpaisseurNormal:  normal;
+     $texteEpaisseurFin:     lighter;
+     $texteEpaisseurGras:    bold;
+
+     // ALIGNEMENT
+     $texteAlignementGauche:   left;
+     $texteAlignementCentre:   center;
+     $texteAlignementDroit:    right;
+     $texteAlignementJustifie: justify;
+
+     // TYPOGRAPHIE
+     $texteTypoMajuscule: uppercase;
+     $texteTypoCapitale:  capitalize;
+     $texteTypoMinuscule: lowercase;
+
+
+
+/* -----------------------------------------
+     4. LES MENUS
+   ----------------------------------------- */
+// MENU_TYPE__HORIZONTAL
+    $menuGoutiere:           1px;
+    $menuJustifyContent:     center;
+/* flex-start, flex-end, center,
+       space-between, space-around, stretch */
+    $menuAlignVertical:      center;
+
+    // Etat normal
+    $menuCouleurNormal:      $couleurFoncee1;
+    $menuCouleurTexteNormal: $couleurFoncee2;
+
+    // Etat actif et hover
+    $menuCouleurActif:      $couleurFoncee2;
+    $menuCouleurTexteActif: $couleur1Foncee;
+    $grillesPadding:        1rem;
+    $valeurColonne:         12;
+
+    /* -----------------------------------------
+      5. LES GRILLES
+   ----------------------------------------- */
+    $grilleNombreColonnes:       12;
+    $grilleGoutiereHorizontale: 1rem;
+    $grilleGoutiereVerticale:   1rem;
+    /* On met rem (par rappport à l'élément racine, il prend donc l'élément par défaut) à la place de em
+    (qui prend la "valeur" dans lequel il se trouve => h1,...) */
+
+    $grilleBreakPoints: ('xs': '0',
+                         's' :'544px',
+                         'm' :'768px',
+                         'l' :'1024px',
+                         'xl':'1200px'
+                         );
+    /*
+    - Toutes les étiquettes xs1 ... xs12
+    (Pour écran style portrait mobile(>0px))
+    - Toutes les étiquettes s1 ... s12
+    (Pour écran style landscape mobile(>544px))
+    - Toutes les étiquettes m1 ... m12
+    (pour écran style portrait tablets navbar collapse (>768px))
+    - Toutes les étiquettes l1 ... l12
+    (pour écran style landscape tablets (>1024px))
+    - Toutes les étiquettes xl1 ... xl12
+    (pour écran style laptops, descktops, tvs (>1200px))
+    */
+
+    /* -----------------------------------------
+      6. LES MENUS HAMBURGER
+    ----------------------------------------- */
+    //Le bouton Hamburger
+    $hamburgerCouleur: #EDA28C;
+
+    // Etat normal
+    $hamburgerCouleurNormal:$couleur1Foncee;
+    $hamburgerCouleurTexteNormal: $couleurClaire1;
+
+    // Etat actif et hover
+    $hamburgerCouleurActif: $couleurFoncee2;
+    $hamburgerCouleurTexteActif: $couleurFoncee1;
+
+    /* -----------------------------------------
+      7. LES CONTACTS
+    ----------------------------------------- */
+    $contactBackgroundCouleur: $couleurClaire1;
+
+    //----------- Bouton 'Submit' -----------
+    // Etat normal
+    $boutonCouleurNormal:$couleur1Foncee;
+    $boutonCouleurTexteNormal: $couleurClaire1;
+
+    // Etat actif et hover
+    $boutonCouleurActif: $couleurFoncee2;
+    $boutonCouleurTexteActif: $couleurClaire1;
